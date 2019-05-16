@@ -21,6 +21,7 @@ The following software is required to run the server locally:
 * Node.js > 6.0
 * NPM / Yarn
 * MongoDB
+* A GitHub account (we are using GitHub verification for logging in, so an account must be used to log in. This can be changed later, our team was unsure how to implement verification so we used GitHub for this purpose)
 
 First, install the necessary dependencies using either NPM or Yarn:
 ```

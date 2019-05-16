@@ -20,7 +20,6 @@ A forum application for the Betterdep site built with the following technologies
 The following software is required to run the server locally:
 * Node.js > 6.0
 * NPM / Yarn
-* Git
 * MongoDB
 
 First, install the necessary dependencies using either NPM or Yarn:

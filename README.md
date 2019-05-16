@@ -70,5 +70,13 @@ $ npm run start
 
 Now, if you visit [http://localhost:8080](http://localhost:8080) (if you ran the dev), or the production URL, you will see that the application is up and running. It will first show you a `Sorry, couldn't find the forum` message. This message is displayed when no forums have been created yet, so we can now create forums as an admin. Sign up via github and visit the admin panel [http://localhost:8080/admin](http://localhost:8080/admin) to begin adding forums. As mentioned previously, this website is configured so that the first user will automatically become that admin.
 
+## Making changes
+When changes are made to the website, you may need to run the following command to rebuild this website:
+```
+$ npm run build
+```
+
+If the changes are still not visible, clearing your cache can often solve the problem (especially with Google Chrome).
+
 ## License
 [MIT License](https://github.com/shoumma/Mister-Poster/blob/master/LICENSE).

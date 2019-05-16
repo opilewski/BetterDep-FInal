@@ -29,7 +29,7 @@ class AdminContainer extends Component {
     if (user.role === 'admin') {
       return (
         <div>
-          <Helmet><title>ReForum | Admin</title></Helmet>
+          <Helmet><title>Betterdep | Admin</title></Helmet>
           <AdminHeader />
           {this.props.children}
         </div>
@@ -38,7 +38,7 @@ class AdminContainer extends Component {
     else {
       return (
         <div style={{ textAlign: 'center', marginTop: 20 }}>
-          We are cordially sorry that you are not allowed to view admin panel!<br />
+          Sorry, admin is restricted!<br />
           Please go back to <Link to='/'>root</Link> page.
         </div>
       );

@@ -1,8 +1,5 @@
-![logo](./docs/design_assets/logo.png)
-
-
-# ReForum
-A minimal forum application built with the following technologies:
+# Betterdep Forum
+A forum application for the Betterdep site built with the following technologies:
 * [React](https://facebook.github.io/react/)
 * [Redux](http://redux.js.org/)
 * [Webpack](https://webpack.js.org/)
@@ -10,40 +7,23 @@ A minimal forum application built with the following technologies:
 * [PassportJS](http://passportjs.org/)
 * [MongoDB](https://www.mongodb.com/)
 
-Demo app is deployed on Heroku. Please check it out: https://reforum-app.herokuapp.com/
-
 ### Application Features
 * Users can post a discussion
 * Users can reply their opinions regarding discussion
 * Users can favorite discussions
 * Users have their own profile page
 * Admin can create new forum categories
-* Admin have a lot of power over every users discussions and opinions :-p
+* The first user created will be the admin
 
-### Documentations
-* [API Docs](https://github.com/shoumma/ReForum/blob/master/docs/api.md)
-* [System Overview](https://github.com/shoumma/ReForum/blob/master/docs/system_overview.md)
+## How to deploy a local server
 
-### Home View
-![home view](./docs/design_assets/home_view.jpg)
-
-### Admin View
-![admin view](./docs/design_assets/admin_view.jpg)
-
-## Deploy on you own server
-
-Please make sure you have following software installed in your system:
+The following software is required to run the server locally:
 * Node.js > 6.0
 * NPM / Yarn
 * Git
 * MongoDB
 
-First we need to clone the repository:
-```
-$ git clone https://github.com/shoumma/ReForum
-```
-
-Then we have to install the necessary dependencies using either NPM or Yarn:
+First, install the necessary dependencies using either NPM or Yarn:
 ```
 $ npm i
 ```
@@ -51,7 +31,7 @@ $ npm i
 $ yarn
 ```
 
-Since the app currently uses GitHub authentication, we need to configure a GitHub OAuth application. You can register a new application from this link https://github.com/settings/developers
+This app currently uses GitHub authentication, we you must configure GitHub OAuth application. You can register a new application from this link https://github.com/settings/developers
 
 We need to grab the following information from the OAuth application.
 * Client ID
@@ -61,7 +41,7 @@ We need to grab the following information from the OAuth application.
 The `Callback URL` is the domain where GitHub will redirect the user after a successful login. You can use a domain name or local host. But we need to append the URL with the path `/api/user/authViaGitHub/callback`. So, the complete url will look like:
 `https://localhost:8080/api/user/authViaGitHub/callback`
 
-Now, we need to configure the credentials inside of the codebase. Open the file `config/credentials.js` add the necessary information. The file looks like this:
+Next, credentials must be configured in the `config/credentials.js` file, which should be empty like this right now:
 ```js
 module.exports = {
   GITHUB_CLIENT_ID: '',
@@ -71,7 +51,7 @@ module.exports = {
 };
 ```
 
-We need to provide all the information here. You can notice that we need the database url here too. My `local` MongoDB url looks like:
+Add your local database that you are currently running. Our team used MongoDB, so our DBURL looked like this:
 ```
 mongodb://localhost:27017/reforum
 ```
@@ -88,23 +68,7 @@ To run the app in production environment:
 $ npm run start
 ```
 
-Now, if you visit [http://localhost:8080](http://localhost:8080) (if you ran the dev), or the production URL, you will see that the application is up and running. Congratulation! But, wait a minute, it's showing you `Sorry, couldn't find the forum`. That is because, we didn't create any forum yet. You can now sign up via github and then visit the admin panel with the url [http://localhost:8080/admin](http://localhost:8080/admin). The application is currently configured in a way that, the first user will become the admin for the system.
-
-Here we can create new forums and that forum will be displayed in the application. The first forum will be used as default forum.
-
-Congratulation! You now have a clone of this application in your server. :-)
-
-## Path for Future Work
-* Add search functionality
-* Add unit tests for both backend and frontend
-* Ability to change the name and logo of the site from admin panel.
-* Make the installation process more interactive
-* Add multiple theme support.
+Now, if you visit [http://localhost:8080](http://localhost:8080) (if you ran the dev), or the production URL, you will see that the application is up and running. It will first show you a `Sorry, couldn't find the forum` message. This message is displayed when no forums have been created yet, so we can now create forums as an admin. Sign up via github and visit the admin panel [http://localhost:8080/admin](http://localhost:8080/admin) to begin adding forums. As mentioned previously, this website is configured so that the first user will automatically become that admin.
 
 ## License
-[MIT License](https://github.com/shoumma/Mister-Poster/blob/master/LICENSE). Do whatever you want to do. :-)
-
-## Conclusion
-The application is created with lots of ♥. Any pull request, issues and contribution is very appreciated. It would be really great if we can take this application to the next level, where it can be used as a platform for forums.
-
-[Provash Shoumma](https://twitter.com/pshoumma)
+[MIT License](https://github.com/shoumma/Mister-Poster/blob/master/LICENSE).
